@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '8'
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install -g yarn
+install:
+  - yarn
+  - yarn add coveralls
+script:
+  - npm run build  # build
+  - npm run test  # run mocha unit tests with coverage
+after_script:
+  - 'cat coverage/lcov.info | ./node_modules/.bin/coveralls' # sends the coverage report to coveralls
