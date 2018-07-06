@@ -97,7 +97,7 @@ module.exports = {
         ]
     },
     devServer: {
-        port: process.env.PORT || 8888,
+        // port: process.env.PORT || 8888,
         host: 'localhost',
         publicPath: '/',
         contentBase: path.resolve(__dirname, "src"),
